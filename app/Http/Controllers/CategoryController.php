@@ -89,9 +89,28 @@ class CategoryController extends Controller
     public function search(Request $request)
     {
 
-        // dd($request->category);
+        $categories = Category::all();
 
-        $postItems = PostItem::where('category_id',$request->id)->get();
+        $postItems = PostItem::where('category_id',$request->category)->get();
+
+        // dd($postItems);
+
+        $count = count($postItems);
+
+        if($count > 0){
+
+            return view('page.categoryItem.index',[
+                'categories' => $categories,
+                'postItems' => $postItems
+            ]);
+
+        }else{
+
+
+            return redirect(route('item.index'))->with('nothing','そのカテゴリーの商品は現在出品されていません');
+
+        }
+
 
 
 

@@ -21,26 +21,7 @@
                 </div>
                 <div class="col-md-7 mt-1">
 
-                    <!-- <div class="row">
-
-                    
-
-                        <div class="col-md-4">
-                            <p>商品名</p>
-                        </div>
-                        <div class="col-md-7">
-                            <p>{{$postItem->name}}</p>
-                        </div>
-
-                    </div> -->
-
                     <table class="table table-bordered">
-                        <!-- <thead>
-                            <tr>
-                            <th scope="col">商品情報</th>
-                            <th scope="col"></th>
-                            </tr>
-                        </thead> -->
                         <tbody>
                             <tr>
                             <th scope="row">商品名</th>
@@ -69,8 +50,9 @@
                         </tbody>
                     </table>
 
-                    <form action="" method="POST">
+                    <form action="{{route('buyItem.store',$postItem->id)}}" method="POST">
                     @csrf
+                    <input type="hidden" name="postItem_id" value="{{$postItem->id}}">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>   商品購入</button>

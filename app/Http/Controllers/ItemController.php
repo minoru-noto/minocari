@@ -18,7 +18,7 @@ class ItemController extends Controller
 
         $categories = Category::all();
         
-        $postItems = PostItem::all();
+        $postItems = PostItem::orderBy('created_at','desc')->get();
         $postItems->load('category');
 
         // dd($postItems);

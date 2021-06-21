@@ -111,15 +111,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href=""
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{route('buyItem.index')}}">
                                         <i class="fas fa-shopping-cart"></i> カート中身
                                     </a>
 
-                                    <form id="logout-form" action="" method="POST" class="d-none">
+                                    <!-- <form id="logout-form" action="{{route('buyItem.index')}}" method="POST" class="d-none">
                                         @csrf
-                                    </form>
+                                    </form> -->
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

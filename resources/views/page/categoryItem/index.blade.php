@@ -12,14 +12,6 @@
                 </div>
             @endif
 
-            @if (session('nothing'))
-                <div class="p-3 mb-5 bg-danger text-white w-50 mx-auto  rounded">
-                    <div class="text-center">
-                    <i class="fas fa-camera"></i>  {{ session('nothing') }}
-                    </div>
-                </div>
-            @endif
-
     <div class="row">
 
 
@@ -41,6 +33,8 @@
 
         </div>
         @endforeach
+
+  
 
         
 
