@@ -63,7 +63,7 @@ class ItemController extends Controller
         $categories = Category::all();
 
         $postItem = PostItem::find($id);
-        $postItem->load('category');
+        $postItem->load('category','user');
 
         return view('page.items.show',[
             'categories' => $categories,

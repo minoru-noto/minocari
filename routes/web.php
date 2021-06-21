@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostItemController;
+use App\Http\Controllers\BuyItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('category/search', [CategoryController::class,'search'])->name('category.search');
 
     Route::resource('postItem', PostItemController::class);
+
+    Route::resource('buyItem', BuyItemController::class);
 
 
 });
