@@ -19,8 +19,14 @@ class BuyItemController extends Controller
 
         $categories = Category::all();
 
+        $buyItems = BuyItem::where('user_id',\Auth::user()->id)->get();
+        $buyItems->load('postItem','user');
+
+        // dd($buyItems);
+
         return view('page.buyItem.index',[
             'categories' => $categories,
+            'buyItems' => $buyItems,
         ]);
         
     }
@@ -99,6 +105,12 @@ class BuyItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // dd($id);
+
+        BuyItem::destroy($id);
+
+        return redirect(route('buyItem.index'))->with('delete_success','購入履歴から削除しました');
+        
     }
 }

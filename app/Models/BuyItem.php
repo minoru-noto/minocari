@@ -19,5 +19,18 @@ class BuyItem extends Model
         'user_id',
     ];
 
+    
+
+
+    public function postItem()
+    {
+        return $this->belongsTo('App\Models\PostItem','postItem_id','id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User','user_id','id');
+    }
+
 
 }
