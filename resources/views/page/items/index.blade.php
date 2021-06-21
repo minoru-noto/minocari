@@ -10,7 +10,7 @@
         <div class="col-md-3">
         
             <div class="card" style="width: 15rem;position:relative;">
-                <a href="">
+                <a href="{{route('item.show',$postItem->id)}}">
                  <img src="{{ asset($postItem->img_url) }}" width="100%" height="100%" alt="">
                 </a>
                 <div class="card-body border-top">
