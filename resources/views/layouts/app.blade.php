@@ -111,13 +111,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('mypost.index')}}">
+                                    <i class="fas fa-camera"></i> 出品履歴
+                                    </a>
+
                                     <a class="dropdown-item" href="{{route('buyItem.index')}}">
                                         <i class="fas fa-shopping-cart"></i> カート中身
                                     </a>
-
-                                    <!-- <form id="logout-form" action="{{route('buyItem.index')}}" method="POST" class="d-none">
-                                        @csrf
-                                    </form> -->
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

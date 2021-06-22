@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Comment;
 use App\Models\PostItem;
 
-class CommentController extends Controller
+class myPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,17 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+
+        $categories = Category::all();
+
+        $postItems = PostItem::where('user_id',\Auth::user()->id)->get();
+
+
+        return view('page.mypost.index',[
+            'categories' => $categories,
+            'postItems' => $postItems
+        ]);
+        
     }
 
     /**
@@ -37,15 +46,7 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-
-        $comment = new Comment();
-
-        $comment->content = $request->input('content');
-        $comment->user_id = $request->input('user_id');
-        $comment->post_item_id = $request->input('post_item_id');
-        $comment->save();
-        
-        return redirect(route('comment.show',$comment->post_item_id));
+        //
     }
 
     /**
@@ -56,30 +57,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-
-        $categories = Category::all();
-
-        // $myComments = Comment::where('user_id',\Auth::user()->id)->get();
-
-        // $otherComments = Comment::where('post_item_id',$id)
-        //                         ->where('user_id','<>',\Auth::user()->id)->get();
-
-        $comments = Comment::where('post_item_id',$id)->get();
-        $postItem = PostItem::where('id',$id)->first();
-
-        $comments->load('user');
-
-        $postItem->load('user');
-
-        // dd($comments);
-
-        return view('page.items_comment.show',[
-            'categories' => $categories,
-            'comments' => $comments,
-            'postItem' => $postItem,
-            'id' => $id
-        ]);
-
+        //
     }
 
     /**

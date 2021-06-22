@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostItemController;
 use App\Http\Controllers\BuyItemController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\myPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('buyItem', BuyItemController::class);
 
     Route::resource('comment', CommentController::class);
+
+    Route::resource('mypost', myPostController::class);
 
 });
 

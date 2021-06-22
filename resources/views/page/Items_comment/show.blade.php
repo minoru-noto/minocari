@@ -16,10 +16,10 @@
 
             @foreach($comments as $comment)
 
-                @if($comment->user_id == Auth::user()->id)
+                @if($comment->user_id == $postItem->user_id)
                 <div class="mb-4">
                     <div class="">
-                        <p>{{Auth::user()->name}}</p> 
+                        <p>{{$postItem->user->name}}</p> 
                     </div>
                     <div class="p-3 mb-2 bg-success text-white rounded w-50">
                         <p>{{$comment->content}}</p>
