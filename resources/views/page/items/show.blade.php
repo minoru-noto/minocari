@@ -29,7 +29,7 @@
                             </tr>
                             <tr>
                             <th scope="row">カテゴリー</th>
-                            <td>{{$postItem->category->major_name}} / {{$postItem->category->name}}</td>
+                            <td>{{$postItem->category->name}} / {{$postItem->category->major_name}}</td>
                             </tr>
                             <tr>
                             <th scope="row">商品説明</th>

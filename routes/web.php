@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostItemController;
 use App\Http\Controllers\BuyItemController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle']);
+Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class,'handleGoogleCallback']);
 
 Route::group(['middleware' => ['auth']], function () {
     
