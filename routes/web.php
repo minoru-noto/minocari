@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//google認証ルート
 Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle']);
 Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class,'handleGoogleCallback']);
 

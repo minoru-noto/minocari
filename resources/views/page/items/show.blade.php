@@ -50,6 +50,8 @@
                         </tbody>
                     </table>
 
+                    <!-----------出品者は購入不可--------------->
+                    @if($postItem->user->id != Auth::user()->id)
                     <form action="{{route('buyItem.store',$postItem->id)}}" method="POST">
                     @csrf
                     <input type="hidden" name="postItem_id" value="{{$postItem->id}}">
@@ -58,6 +60,7 @@
                         <button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>   商品購入</button>
                     </div>
                     </form>
+                    @endif
 
                 </div>
 
