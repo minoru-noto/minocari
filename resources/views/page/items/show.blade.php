@@ -51,6 +51,7 @@
                     </table>
 
                     <!-----------出品者は購入不可--------------->
+                    
                     @if($postItem->user->id != Auth::user()->id)
                     <form action="{{route('buyItem.store',$postItem->id)}}" method="POST">
                     @csrf
