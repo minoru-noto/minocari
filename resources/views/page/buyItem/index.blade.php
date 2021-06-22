@@ -3,8 +3,6 @@
 @section('content')
 
 <div class="container d-flex justify-content-center">
-
-            
             
 
     <div class="card w-50">

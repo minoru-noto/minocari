@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Auth\LoginController;
+
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostItemController;
 use App\Http\Controllers\BuyItemController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('buyItem', BuyItemController::class);
 
+    Route::resource('comment', CommentController::class);
 
 });
 

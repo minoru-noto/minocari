@@ -86,12 +86,13 @@
             </div>
             
             <div class="text-center mt-5">
-                <button type="submit" class="btn btn-primary w-25">出品</button>
+                <button type="submit" class="btn btn-primary w-25" id="post_Item">出品</button>
             </div>
 
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
             
             </form>
+
         </div>
     </div>
 </div>
@@ -115,6 +116,25 @@
     // ファイルをData URIとして読み込む
     fileReader.readAsDataURL(file);
 });
+
+document.getElementById('post_Item').addEventListener('click', function (e) {
+
+    if(confirm("本当に出品しますか？")){
+        
+        //出品する
+        
+    }else{
+
+    return false;
+
+
+
+    }
+        
+});
+
+   
+    
 </script>
 
 

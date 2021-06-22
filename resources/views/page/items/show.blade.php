@@ -18,6 +18,9 @@
 
                 <div class="col-md-5">
                     <img src="{{ asset($postItem->img_url) }}" class="border" width="250px" height="250px" alt="">
+                    <div class="mt-3 text-center mr-5">
+                        <a href="{{route('comment.show',$postItem->id)}}" class="btn bg-success text-white w-50">コメントする</a>
+                    </div>
                 </div>
                 <div class="col-md-7 mt-1">
 
@@ -62,6 +65,7 @@
                     </div>
                     </form>
                     @endif
+
 
                 </div>
 
